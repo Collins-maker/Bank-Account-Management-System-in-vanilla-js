@@ -63,9 +63,11 @@ class BankAccount {
 
   withdraw(amount) {
     if (this._balance >= amount) {
+        this._balance -= amount;
       console.log(
         `You have withdrawn ${amount} from bank Account ${this._accountNumber}`
       );
+
     } else {
       console.log(
         `You have inssufficient balance in your bank to withdraw ${amount} from account: ${
@@ -86,7 +88,7 @@ class SavingsAccount extends BankAccount {
   }
 
   calculateInterest() {
-    interst = (this._interestRate * this._balance) / 100;
+    let interest = (this._interestRate * this._balance) / 100;
     console.log(
       `interest for the account: ${this._accountNumber} is : ${interest}`
     );
@@ -130,31 +132,31 @@ try {
     console.log('Account Holder:', bankAccount.accountHolder);
     console.log('Balance:', bankAccount.balance);
   
-    // // Perform a deposit
-    // bankAccount.deposit(500);
-    // console.log('New Balance:', bankAccount.balance);
+    // Perform a deposit
+    bankAccount.deposit(500);
+    console.log('New Balance:', bankAccount.balance);
   
-    // // Perform a withdrawal
-    // bankAccount.withdraw(200);
-    // console.log('New Balance:', bankAccount.balance);
+    // Perform a withdrawal
+    bankAccount.withdraw(200);
+    console.log('New Balance:', bankAccount.balance);
   
-    // // Create SavingsAccount instance
-    // const savingsAccount = new SavingsAccount('987654321', 'Jane Smith', 2000, 5);
+    // Create SavingsAccount instance
+    const savingsAccount = new SavingsAccount('98654321', 'Haron Mburu', 2000, 5);
   
-    // console.log('\nSavings Account Information:');
-    // console.log('Account Number:', savingsAccount.accountNumber);
-    // console.log('Account Holder:', savingsAccount.accountHolder);
-    // console.log('Balance:', savingsAccount.balance);
+    console.log('\nSavings Account Information:');
+    console.log('Account Number:', savingsAccount.accountNumber);
+    console.log('Account Holder:', savingsAccount.accountHolder);
+    console.log('Balance:', savingsAccount.balance);
   
-    // // Perform a deposit
-    // savingsAccount.deposit(1000);
-    // console.log('New Balance:', savingsAccount.balance);
+    // Perform a deposit
+    savingsAccount.deposit(1000);
+    console.log('New Balance:', savingsAccount.balance);
   
-    // // Calculate and display interest
-    // savingsAccount.calculateInterest();
+    // Calculate and display interest
+    savingsAccount.calculateInterest();
   
     // // Create CheckingAccount instance
-    // const checkingAccount = new CheckingAccount('456789123', 'Alice Johnson', 1500, 1000);
+    // const checkingAccount = new CheckingAccount('456789123', 'Melon Apple', 1500, 1000);
   
     // console.log('\nChecking Account Information:');
     // console.log('Account Number:', checkingAccount.accountNumber);
